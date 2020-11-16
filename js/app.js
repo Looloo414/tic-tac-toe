@@ -1,39 +1,170 @@
-/*-------------------------------- Constants --------------------------------*/
-const colors = { 
-    player1: 'red',
-    player2: 'blue',
-    null: 'white'
+// --------------CONSTANTS----------
+
+
+
+// -------------VARIABLES------------
+let startGame = true;
+let xTurn = true;
+
+
+// --------------CACHED ELEMENTS--------
+const cellElements = document.querySelectorAll('.cell');
+const winningMessageText = document.querySelector('.winning-message');
+
+const startOver = document.querySelector('.reset-button');
+
+
+
+
+// --------------FUNCTIONS--------------------
+const initiate = (e) => {
+    console.log(e);
+};
+
+const handleCellClick = (e) => {
+    // console.log(e.target);
+    const location = e.target.classList[1];
+
+    if(xTurn) {
+        console.log(e.target);
+    }
 }
 
-const winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+// --------------EVENT LISTENERS------------
+startOver.addEventListener('click', initiate);
+
+// for (const cellDiv of cellElements) {
+//     cellDiv.addEventListener('click', handleCellClick)
+// }
+cellElements.forEach(cell => {
+    cell.addEventListener('click', handleCellClick, { once: true})
+});
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------- Constants --------------------------------*/
+// const playerX = "x"
+// const playerO = "o"
+
+// const colors = { 
+//     player1: 'red',
+//     player2: 'blue',
+//     null: 'white'
+// }
+
+// const winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board, turn, winner;
+
 // Variables might include (board/turn/winner)
 
+// let circleTurn
+
 /*------------------------ Cached Element References ------------------------*/
-const sq0 = document.getElementById("sq0");
-const sq1 = document.getElementById("sq1");
-const sq2 = document.getElementById("sq2");
-const sq3 = document.getElementById("sq3");
-const sq4 = document.getElementById("sq4");
-const sq5 = document.getElementById("sq5");
-const sq6 = document.getElementById("sq6");
-const sq7 = document.getElementById("sq7");
-const sq8 = document.getElementById("sq8");
+// const cellElements = document.querySelectorAll('[data-cell]')
+// const winningMessageText = document.querySelector('.winning-message')
+
+// const startOver = document.querySelector('.resetButton')
+
 
 // You might choose to put your game status here
 
-/*----------------------------- Event Listeners -----------------------------*/
+/*----------------------------- Event Listeners --------------------------*/
+
+// cellElements.forEach(cell => {
+//     cell.addEventListener('click', handleClick, { once: true})
+// });
 
 
-// This is where you should put the event listener
-// for a mouse-click
 
 /*-------------------------------- Functions --------------------------------*/
 
+
+// function initiate() {
+//     circleTurn = false;
+//     cellElements.forEach(cell => {
+//         cell.classList.remove(playerO)
+//         cell.classList.remove(playerX)
+//         cell.removeListeners('click', handleClick)
+//         cell.addEventListener('click', handleClick, { once: true})
+//     })
+// };
+// initiate();
+
+// function handleClick(e) {
+//     const cell = e.target
+//     const currentClass = circleTurn ? playerO : playerX 
+//     placeMark(cell, currentClass)
+//     if (winner(currentClass)){
+//         endGame(false)
+//     } else if (isTie()) {
+//         endGame(true) 
+//     } else {
+//     swapTurns()
+//     }
+// };
+
+// function endGame(tie){
+//     if (tie) {
+//         winningMessageText.innerText = "It's a Tie!"
+//     } else {
+//         winningMessageText.innerText = `${circleTurn ? "O" : "X"} Wins!`
+//     }
+//     winningMessage.classList.add('show')
+// }
+
+// function isTie() {
+//     return [...cellElements].every(cell => {
+//         return cell.classList.contains(playerX) || cell.classList.contains(playerO)
+//     })
+// }
+
+// function placeMark(cell, currentClass) {
+//     cell.classList.add(currentClass)
+
+// };
+
+// function swapTurns() {
+//     circleTurn = !circleTurn
+// };
+
+// function winner(currentClass) {
+//     winningCombinations.some(combination => {
+//         return combination.every(index => {
+//             return cellElements[index].classList.contains(currentClass)
+//         })
+//     })
+// }
 
 // Some functions you might choose to use:
 
