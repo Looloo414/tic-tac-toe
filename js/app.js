@@ -55,17 +55,7 @@ cellElements.forEach(cell => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// !!CODE THAT DIDN'T WORK!! IT RESULTED IN IT ALWAYS BEING A TIE
 
 
 
