@@ -20,7 +20,10 @@ body {
     vertical-align: middle;
     background-color: lavender;
     }
-    
+    .cell:hover {
+        cursor: pointer;
+    }
+
     h1 {
         text-align: center;
         margin: 0 auto;
